@@ -21,17 +21,14 @@ Dir.each_child(paperdir) { |name|
     cmd = "mutool info " + paper_filepath + " | grep \"Pages: \""
     npages = `#{cmd}`.chomp.split(" ").last
     total_pages += npages.to_i
-    #puts "[" + paper_name + "]:" + npages
-    i = 0
-    while (i < npages.to_i) do
-      pagenum = i + 1
-      pagefilename = pagedir + "/" + paper_pagedir + "/" + pagenum.to_s + ".png"
-      pagefilename = Shellwords.escape(pagefilename)
-      cmd = "mutool convert -o " + pagefilename + " -O resolution=720 " +
-        paper_filepath + " " + pagenum.to_s
-      `#{cmd}`
-      i = i + 1
-    end
+    puts "[" + paper_name + "]:" + npages
+    pagefilenames = pagedir + "/" + paper_pagedir + "/page_"
+    pagefilenames = Shellwords.escape(pagefilenames)
+    pagefilenames = pagefilenames + '%' + "d.png"
+    cmd = "mutool convert -o " + pagefilenames + " -O resolution=720 " +
+      paper_filepath
+    puts cmd
+    `#{cmd}`
   end
 }
 
