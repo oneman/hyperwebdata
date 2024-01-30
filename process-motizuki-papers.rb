@@ -15,20 +15,23 @@ Dir.each_child(paperdir) { |name|
     paper_name = name.sub(".pdf", "");
     paper_filepath = paperdir + "/" + Shellwords.escape(name)
     paper_pagedir = name.sub(".pdf", " Pages");
-    if (!Dir.exist?(paper_pagedir)) then
-       Dir.mkdir(paper_pagedir);
+    if (!Dir.exist?(pagedir + "/" + paper_pagedir)) then
+       Dir.mkdir(pagedir + "/" + paper_pagedir);
     end
     cmd = "mutool info " + paper_filepath + " | grep \"Pages: \""
     npages = `#{cmd}`.chomp.split(" ").last
     total_pages += npages.to_i
     #puts "[" + paper_name + "]:" + npages
-    npages.to_i.times do |i|
+    i = 0
+    while (i < npages.to_i) do
       pagenum = i + 1
       pagefilename = pagedir + "/" + paper_pagedir + "/" + pagenum.to_s + ".png"
       pagefilename = Shellwords.escape(pagefilename)
       cmd = "mutool convert -o " + pagefilename + " -O resolution=720 " +
         paper_filepath + " " + pagenum.to_s
-      `#{cmd}`
+      #`#{cmd}`
+      puts cmd
+      i = i + 1
     end
   end
 }
