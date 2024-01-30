@@ -29,8 +29,7 @@ Dir.each_child(paperdir) { |name|
       pagefilename = Shellwords.escape(pagefilename)
       cmd = "mutool convert -o " + pagefilename + " -O resolution=720 " +
         paper_filepath + " " + pagenum.to_s
-      #`#{cmd}`
-      puts cmd
+      `#{cmd}`
       i = i + 1
     end
   end
