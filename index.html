@@ -12,8 +12,6 @@
   funtimes = 0;
 
   function logfun(str) {
-    caplog += "Captain Log j-date " + Date.now() + "\n";
-    caplog += "Complaint# " + --funtimes + "\n";
     caplog += str;
     caplog += "\n\n";
   }
@@ -24,8 +22,7 @@
   }
 
   function sayfun(str) {
-    logfun("Complaint# \n" + --funtimes + "\n");
-    logfun("Customer Stated: \n" + str + "\n");
+    logfun("Customer Stated (Complaint# " + funtimes++ + ")\": " + str);
     if (str == "ls") {
       msgfun("Code 0F: Zero fucks given.");
     }
