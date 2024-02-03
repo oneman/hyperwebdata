@@ -13,8 +13,9 @@
 
   function logfun(str) {
     caplog += "Captain Log j-date " + Date.now() + "\n";
+    caplog += "Complaint# " + --funtimes + "\n";
     caplog += str;
-    caplog += "\nEnd of Log Entry\n\n";
+    caplog += "\n\n";
   }
 
   function msgfun(msg) {
