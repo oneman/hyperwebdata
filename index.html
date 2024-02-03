@@ -11,6 +11,8 @@
   function fun() {
     body = document.querySelector("body");
     body.addEventListener("keydown", keyfun);
+    input = document.querySelector("input");
+    input.focus();
     function keyfun(e) {
       input = document.querySelector("input");
       input.textContent += ` ${e.code}`;
