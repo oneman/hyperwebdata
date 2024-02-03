@@ -26,10 +26,11 @@
       log("Customer Stated: \n" + str + "\n");
       n++;
     }
-    function keyfun(e) {
+    function keyfun(nfo) {
+      key_value = nfo.key;
       input = document.querySelector("input");
-      console.log("keydown: " + e.value);
-        if (e.value == "Enter") {
+      console.log("keydown: " + key_value);
+        if (key_value == "Enter") {
           string = input.value;
           inform(input.value);
           input.value = "";
