@@ -8,42 +8,48 @@
   gtag('js', new Date());
   gtag('config', 'G-T8H7F83GLS');
 
-  cap_log = "";
-  n = 0;
+  caplog = "";
+  funtimes = 0;
+
   function logfun(str) {
-    cap_log += "Captain Log j-date " + Date.now() + "\n";
-    cap_log += str;
-    cap_log += "\nEnd of Log Entry\n\n";
+    caplog += "Captain Log j-date " + Date.now() + "\n";
+    caplog += str;
+    caplog += "\nEnd of Log Entry\n\n";
   }
+
   function msgfun(msg) {
     message = document.querySelector("p");
     msg.textContent = msg;
   }
+
+  function sayfun(str) {
+    logfun("Complaint# \n" + n + "\n");
+    logfun("Customer Stated: \n" + str + "\n");
+    if (str == "ls") {
+      msgfun("Code 0F: Zero fucks given.");
+    }
+    funtimes++;
+  }
+  
+  function keyfun(nfo) {
+    key_value = nfo.key;
+    input = document.querySelector("input");
+    console.log("keydown: " + key_value);
+    if (key_value == "Enter") {
+       string = input.value;
+      sayfun(input.value);
+      input.value = "";
+    }
+    funtimes++;
+    input.focus();
+  }
+  
   function hellfun() {
-    log("hell");
+    logfun("hell");
     body = document.querySelector("body");
     body.addEventListener("keydown", keyfun);
     linein = document.querySelector("input");
     linein.focus();
-    function sayfun(str) {
-      log("Complaint# \n" + n + "\n");
-      log("Customer Stated: \n" + str + "\n");
-      if (str == "ls") {
-        msgfun("Code 0F: Zero fucks given.");
-      }
-      n++;
-    }
-    function keyfun(nfo) {
-      key_value = nfo.key;
-      input = document.querySelector("input");
-      console.log("keydown: " + key_value);
-        if (key_value == "Enter") {
-          string = input.value;
-          sayfun(input.value);
-          input.value = "";
-        }
-      input.focus();
-    }
   }
   </script>
   <title>Web Site 26</title></head>
