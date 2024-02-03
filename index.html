@@ -11,13 +11,12 @@
   cap_log = "";
   n = 0;
   function log(str) {
-    cap_log += "Captain Log j-date " + Date.now();
-    cap_log += "\nstr;
+    cap_log += "Captain Log j-date " + Date.now() + "\n";
     cap_log += str;
     cap_log += "\nEnd of Log Entry\n\n";
   }
   function fun() {
-    log("Hello j-date: " + Date.now());
+    log("hell");
     body = document.querySelector("body");
     body.addEventListener("keydown", keyfun);
     input = document.querySelector("input");
@@ -29,8 +28,8 @@
     }
     function keyfun(e) {
       input = document.querySelector("input");
-      console.log("keydown: " + ` ${e.code}`);
-        if () {
+      console.log("keydown: " + e.value);
+        if (e.value == "Enter") {
           string = input.value;
           inform(input.value);
           input.value = "";
