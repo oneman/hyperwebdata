@@ -7,9 +7,15 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-T8H7F83GLS');
-
-  function key(e) {
-    console.log("keydown: " + e.code);
+  
+  function fun() {
+    body = document.querySelector("body");
+    input = document.getElementById("input");
+    body.addEventListener("keydown", keyfun);
+    function keyfun(e) {
+      input.textContent += ` ${e.code}`;
+      console.log("keydown: " + ` ${e.code}`);
+    }
   }
   </script>
   <title>Web Site 26</title></head>
@@ -22,7 +28,7 @@
     }
     video { width: 80%; }
   </style>
-  <body onkeydown="key()>
+  <body onload="fun()">
     <h3>Richards American Defense Company Web Activity</h3>
     <p>2/1/24</p>
     <p><video controls><source
