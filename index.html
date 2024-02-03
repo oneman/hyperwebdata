@@ -23,7 +23,7 @@
 
   function sayfun(str) {
     logfun("Customer Stated (Complaint# " + funtimes++ + ")\": " + str);
-    if (str == "ls") {
+    if (str.substring(0, 2) === "ls") {
       msgfun("Code 0F: Zero fucks given.");
     }
   }
@@ -33,7 +33,7 @@
     input = document.querySelector("input");
     console.log("keydown: " + key_value);
     if (key_value == "Enter") {
-       string = input.value;
+      string = input.value;
       sayfun(input.value);
       input.value = "";
     }
