@@ -10,26 +10,26 @@
 
   cap_log = "";
   n = 0;
-  function log(str) {
+  function logfun(str) {
     cap_log += "Captain Log j-date " + Date.now() + "\n";
     cap_log += str;
     cap_log += "\nEnd of Log Entry\n\n";
   }
-  function funmsg(msg) {
+  function msgfun(msg) {
     message = document.querySelector("p");
     msg.textContent = msg;
   }
-  function fun() {
+  function hellfun() {
     log("hell");
     body = document.querySelector("body");
     body.addEventListener("keydown", keyfun);
     linein = document.querySelector("input");
-    input.focus();
-    function inform(str) {
+    linein.focus();
+    function sayfun(str) {
       log("Complaint# \n" + n + "\n");
       log("Customer Stated: \n" + str + "\n");
       if (str == "ls") {
-        funmsg("Code 0F: Zero fucks given.");
+        msgfun("Code 0F: Zero fucks given.");
       }
       n++;
     }
@@ -39,7 +39,7 @@
       console.log("keydown: " + key_value);
         if (key_value == "Enter") {
           string = input.value;
-          inform(input.value);
+          sayfun(input.value);
           input.value = "";
         }
       input.focus();
@@ -57,7 +57,7 @@
     input { border: none; border-bottom: 2px solid red; }
     video { width: 80%; }
   </style>
-  <body onload="fun()">
+  <body onload="hellfun()">
     <h3>Richards American Defense Company Web Activity</h3>
     <p>Welcome to new system.</p>
     <input size="78"/>
