@@ -15,15 +15,22 @@
     cap_log += str;
     cap_log += "\nEnd of Log Entry\n\n";
   }
+  function funmsg(msg) {
+    message = document.querySelector("p");
+    msg.textContent = msg;
+  }
   function fun() {
     log("hell");
     body = document.querySelector("body");
     body.addEventListener("keydown", keyfun);
-    input = document.querySelector("input");
+    linein = document.querySelector("input");
     input.focus();
     function inform(str) {
       log("Complaint# \n" + n + "\n");
       log("Customer Stated: \n" + str + "\n");
+      if (str == "ls") {
+        funmsg("Code 0F: Zero fucks given.");
+      }
       n++;
     }
     function keyfun(nfo) {
