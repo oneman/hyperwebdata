@@ -10,9 +10,9 @@
   
   function fun() {
     body = document.querySelector("body");
-    input = document.getElementById("input");
     body.addEventListener("keydown", keyfun);
     function keyfun(e) {
+      input = document.querySelector("input");
       input.textContent += ` ${e.code}`;
       console.log("keydown: " + ` ${e.code}`);
     }
@@ -30,6 +30,7 @@
   </style>
   <body onload="fun()">
     <h3>Richards American Defense Company Web Activity</h3>
+    <input/>
     <p>2/1/24</p>
     <p><video controls><source
       src="https://raw.githubusercontent.com/oneman/hyperwebdata/main/3856906a-270c-4fc4-b29c-3016dd28a442.mp4"></video></p>
