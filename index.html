@@ -7,16 +7,33 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-T8H7F83GLS');
-  
+
+  cap_log = "";
+  function log(str) {
+    cap_log += "Captain Log j-date " + Date.now();
+    cap_log += "\nstr;
+    cap_log += str;
+    cap_log += "\nEnd of Log Entry\n\n";
+  }
   function fun() {
+    log("Hello j-date: " + Date.now());
     body = document.querySelector("body");
     body.addEventListener("keydown", keyfun);
     input = document.querySelector("input");
     input.focus();
+    function inform(str) {
+      log("Customer Stated: \n" + str +
+
+    }
     function keyfun(e) {
-      //input = document.querySelector("p");
-      //input.textContent += ` ${e.code}`;
+      input = document.querySelector("input");
       console.log("keydown: " + ` ${e.code}`);
+        if () {
+          string = input.value;
+          inform(input.value);
+          input.value = "";
+        }
+      input.focus();
     }
   }
   </script>
