@@ -14,8 +14,8 @@
     input = document.querySelector("input");
     input.focus();
     function keyfun(e) {
-      input = document.querySelector("input");
-      input.textContent += ` ${e.code}`;
+      //input = document.querySelector("p");
+      //input.textContent += ` ${e.code}`;
       console.log("keydown: " + ` ${e.code}`);
     }
   }
@@ -33,6 +33,7 @@
   </style>
   <body onload="fun()">
     <h3>Richards American Defense Company Web Activity</h3>
+    <p>Welcome to new system.</p>
     <input size="78"/>
     <p>2/1/24</p>
     <p><video controls><source
