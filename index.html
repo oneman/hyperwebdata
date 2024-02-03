@@ -9,6 +9,7 @@
   gtag('config', 'G-T8H7F83GLS');
 
   cap_log = "";
+  n = 0;
   function log(str) {
     cap_log += "Captain Log j-date " + Date.now();
     cap_log += "\nstr;
@@ -22,8 +23,9 @@
     input = document.querySelector("input");
     input.focus();
     function inform(str) {
-      log("Customer Stated: \n" + str +
-
+      log("Complaint# \n" + n + "\n");
+      log("Customer Stated: \n" + str + "\n");
+      n++;
     }
     function keyfun(e) {
       input = document.querySelector("input");
