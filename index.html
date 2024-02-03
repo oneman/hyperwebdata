@@ -22,9 +22,14 @@
   }
 
   function sayfun(str) {
+    funtimes++;
     logfun("Customer Stated: " + str);
     if (str == "ls") {
-      msgfun("Code 0F: Zero fucks given.");
+      msgfun("0F: Zero fucks given.");
+      return;
+    }
+    if (str == "") {
+      msgfun("#" + funtime + " Cancelled.");
     }
   }
   
