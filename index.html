@@ -23,12 +23,11 @@
   }
 
   function sayfun(str) {
-    logfun("Complaint# \n" + n + "\n");
+    logfun("Complaint# \n" + --funtimes + "\n");
     logfun("Customer Stated: \n" + str + "\n");
     if (str == "ls") {
       msgfun("Code 0F: Zero fucks given.");
     }
-    funtimes++;
   }
   
   function keyfun(nfo) {
@@ -40,7 +39,6 @@
       sayfun(input.value);
       input.value = "";
     }
-    funtimes++;
     input.focus();
   }
   
