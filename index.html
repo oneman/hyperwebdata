@@ -17,12 +17,12 @@
   }
 
   function msgfun(msg) {
-    message = document.querySelector("p");
-    msg.textContent = msg;
+    output = document.querySelector("p");
+    output.textContent = msg;
   }
 
   function sayfun(str) {
-    logfun("Customer Stated (Complaint# " + funtimes++ + ")\": " + str);
+    logfun("Customer Stated: " + str);
     if (str == "ls") {
       msgfun("Code 0F: Zero fucks given.");
     }
@@ -42,10 +42,8 @@
   
   function hellfun() {
     logfun("hell");
-    body = document.querySelector("body");
-    body.addEventListener("keydown", keyfun);
-    linein = document.querySelector("input");
-    linein.focus();
+    document.querySelector("body").addEventListener("keydown", keyfun);
+    document.querySelector("input").focus();
   }
   </script>
   <title>Web Site 26</title></head>
